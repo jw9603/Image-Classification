@@ -2,6 +2,8 @@
 
 This directory contains code for training and testing the MNIST dataset using only fully connected layers.
 
+The code is designed to work with any dataset as long as you adjust the dataloader section and the input and output sizes.
+
 
 ## Usage
 
