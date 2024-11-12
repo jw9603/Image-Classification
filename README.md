@@ -23,9 +23,12 @@ I plan to upload it later.
     ├── train.py/
     ├── utils.py/
     └── run.sh/
-  
+├── autoencoder/
+    ├── autoencoder.ipynb/                 
+    ├── model.py/
+    ├── trainer.py/
+    ├── utils.py/
 ├── ... (I plan to upload it later.)
-├── ...
 ├── ...
 ```
 
