@@ -1,4 +1,4 @@
-# Image-Classification
+# Deep Learning Basic
 
 This repository focuses on Deep Learning basic. It can be applied to everything from the basic MNIST dataset to custom datasets.
 
