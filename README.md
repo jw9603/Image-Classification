@@ -28,6 +28,11 @@ I plan to upload it later.
     ├── model.py/
     ├── trainer.py/
     ├── utils.py/
+├── manifold/
+    ├── manifold.ipynb/                 
+    ├── model.py/
+    ├── trainer.py/
+    ├── utils.py/
 ├── ... (I plan to upload it later.)
 ├── ...
 ```
