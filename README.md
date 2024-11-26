@@ -1,6 +1,6 @@
 # Image-Classification
 
-This repository focuses on image classification. It can be applied to everything from the basic MNIST dataset to custom datasets.
+This repository focuses on Deep Learning basic. It can be applied to everything from the basic MNIST dataset to custom datasets.
 
 I developed this in a practical, deployable form, rather than simply in a Jupyter Notebook.
 
