@@ -14,7 +14,7 @@ I plan to upload it later.
 ### 1. Directory
 
 ```plain
-.
+
 ├── README.md
 ├── mnist_classification/
     ├── resut_model/                 (model_file)
