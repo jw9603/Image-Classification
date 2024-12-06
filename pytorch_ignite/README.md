@@ -4,7 +4,7 @@ This directory contains code for training and testing the MNIST dataset using on
 
 The code is designed to work with any dataset as long as you adjust the dataloader section and the input and output sizes.
 
-I structured a training boilerplate using PyTorch Ignite.
+I structured a training boilerplate using [Pytorch Ignite](https://pytorch.org/ignite/index.html).
 
 
 ## Usage
