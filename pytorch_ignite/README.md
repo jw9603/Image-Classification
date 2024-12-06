@@ -1,10 +1,12 @@
 # MNIST Classification
 
-This directory contains code for training and testing the MNIST dataset using only fully connected layers.
+This directory contains code for training and testing the MNIST dataset using fully connected layers only.
 
-The code is designed to work with any dataset as long as you adjust the dataloader section and the input and output sizes.
+The code is designed to be flexible and can work with any dataset, provided that the data loader and the model's input and output sizes are appropriately adjusted.
 
-I structured a training boilerplate using [Pytorch Ignite](https://pytorch.org/ignite/index.html).
+I have structured a training boilerplate using [PyTorch Ignite](https://pytorch.org/ignite/index.html), enabling streamlined training and testing.
+
+By modifying the data loader and the model's input and output, this code can be adapted to train on various datasets.
 
 
 ## Usage
