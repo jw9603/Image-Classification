@@ -34,7 +34,16 @@ I plan to upload it later.
     ├── trainer.py/
     ├── utils.py/
 ├── pytorch_dataset/
-    ├── custom_dataset.ipynb/                 
+    ├── custom_dataset.ipynb/
+├── pytorch_ignite/
+    ├── data/
+    ├── result_mode/                
+    ├── data_loader.py/
+    ├── model.py/
+    ├── run_train.sh/
+    ├── test.py/
+    ├── train.py/
+    ├── trainer.py/
 ├── ... (I plan to upload it later.)
 ├── ...
 ```
