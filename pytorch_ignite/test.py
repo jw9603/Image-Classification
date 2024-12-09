@@ -2,8 +2,8 @@ import argparse
 import torch
 import torch.nn
 import sys
-from model import ImageClassifier
-from data_loader import load_mnist
+from model.fc_model import FcClassifier
+from model.cnn_model import ConvolutionalClassifier
 import os
 
 
@@ -33,9 +33,6 @@ def test(model, x, y):
         acc = correct_cnt / total_cnt
     
     return acc    
-    
-    
-    pass
 
 if __name__ == '__main__':
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
@@ -46,7 +43,8 @@ if __name__ == '__main__':
     x, y = x.to(device), y.to(device)    
     
     
-    model = ImageClassifier(28**2, 10).to(device)
+    # model = FcClassifier(28**2, 10).to(device)
+    model = ConvolutionalClassifier(10).to(device)
     accuracy = []
     for i in model_list:
         model.load_state_dict(load(fn=i, device=device))
