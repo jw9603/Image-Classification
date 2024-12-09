@@ -8,7 +8,7 @@ mkdir -p ./result_model
 
 # Set parameters
 bs=256               # Batch size
-epochs=5          # Number of epochs
+epochs=5             # Number of epochs
 train_ratio=0.8      # Training data ratio
 model_name='cnn'     # fc or cnn
 
