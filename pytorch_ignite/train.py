@@ -5,11 +5,15 @@ import torch.optim as optim
 from trainer import Trainer
 
 from data_loader import get_loaders
-from model import ImageClassifier
+from model.fc_model import FcClassifier
+from model.cnn_model import ConvolutionalClassifier
+
+
 def define_argparser():
     p = argparse.ArgumentParser()
     
     p.add_argument('--model_file', required=True)
+    p.add_argument('--model', type=str, default='fc')
     p.add_argument('--gpu_id', type=int, default=0 if torch.cuda.is_available() else -1)
     p.add_argument('--train_ratio', type=float, default=.8)
     p.add_argument('--batch_size', type=int, default=256)
@@ -19,6 +23,15 @@ def define_argparser():
     config = p.parse_args()
     
     return config
+
+def model_choose(config):
+    if config.model == 'fc':
+        model = FcClassifier(28**2, 10)
+    elif config.model == 'cnn':
+        model = ConvolutionalClassifier(10)
+    else:
+        raise NotImplementedError('You need to tell me which model to use.')
+    return model
 
 
 def main(config):
@@ -31,10 +44,15 @@ def main(config):
     print(f"Valid: {len(valid_loader.dataset)}")
     print(f"Test: {len(test_loader.dataset)}")
     
-    model = ImageClassifier(28**2, 10).to(device)
+    # model = FcClassifier(28**2, 10).to(device) # Before
+    model = model_choose(config).to(device)
     optimizer = optim.Adam(model.parameters())
     crit = nn.NLLLoss()
     
+    if config.verbose >= 2:
+        print(f"model: {model}")
+        print(f"optimizer: {optimizer}")
+        print(f"crit: {crit}")    
     trainer = Trainer(config)
     best_model = trainer.train(model=model, crit=crit, optimizer=optimizer, train_loader=train_loader, valid_loader=valid_loader)
     
