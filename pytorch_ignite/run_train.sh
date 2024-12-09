@@ -10,10 +10,12 @@ mkdir -p ./result_model
 bs=256               # Batch size
 epochs=30            # Number of epochs
 train_ratio=0.8      # Training data ratio
+model_name='cnn'     # fc or cnn
 
 # Run the Python script
 python train.py \
-    --model "./result_model/mnist_classification_${dt}_bs${bs}_epoch${epochs}_ratio${train_ratio}.pth" \
+    --model_file "./result_model/mnist_classification_${model_name}_${dt}_bs${bs}_epoch${epochs}_ratio${train_ratio}.pth" \
+    --model $model_name \
     --batch_size $bs \
     --n_epochs $epochs \
     --train_ratio $train_ratio
