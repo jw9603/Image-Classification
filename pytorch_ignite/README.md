@@ -20,7 +20,7 @@ The file structure will look like:
 ├── README.md
 ├── pytorch_ignite/
     ├── data/
-    ├── result_mode/                
+    ├── result_model/                
     ├── data_loader.py/
     ├── model/
         ├── cnn_model.py/
