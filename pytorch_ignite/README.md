@@ -29,14 +29,19 @@ The file structure will look like:
     ├── trainer.py/
 ```
 
+### 1. Models
+
+- MLP (Fully Connected Layers)
+- CNN
+- RNN
 
 
-### 1. Train
+### 2. Train
 ```
 bash ./run_train.sh
 ```
 
-### 2. Evaluate trained model
+### 3. Evaluate trained model
 ```
 python ./test.py
 ```
