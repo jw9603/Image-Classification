@@ -22,7 +22,9 @@ The file structure will look like:
     ├── data/
     ├── result_mode/                
     ├── data_loader.py/
-    ├── model.py/
+    ├── model/
+        ├── cnn_model.py/
+        ├── fc_model.py/
     ├── run_train.sh/
     ├── test.py/
     ├── train.py/
