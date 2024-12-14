@@ -46,7 +46,7 @@ I plan to upload it later.
     ├── test.py/
     ├── train.py/
     ├── trainer.py/
+├── 딥러닝 왕기초
 ├── ... (I plan to upload it later.)
-├── ...
 ```
 
