@@ -47,6 +47,8 @@ I plan to upload it later.
     ├── train.py/
     ├── trainer.py/
 ├── 딥러닝 왕기초
+    ├── 2-1.ipynb/
+    ├── 2-2.ipynb/ 
 ├── ... (I plan to upload it later.)
 ```
 
