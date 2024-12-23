@@ -47,6 +47,8 @@ def get_loaders(config):
     train_cnt = int(x.size(0) * config.train_ratio)
     valid_cnt = x.size(0) - train_cnt
     
+    flatten = True if config.model == 'fc' else False
+    
     indices = torch.randperm(x.size(0))
     
     train_x, valid_x = torch.index_select(
@@ -62,19 +64,19 @@ def get_loaders(config):
     ).split([train_cnt, valid_cnt],dim=0)
     
     train_loader = DataLoader(
-        dataset=MnistDataset(train_x, train_y,flatten=True),
+        dataset=MnistDataset(train_x, train_y,flatten=flatten),
         batch_size=config.batch_size,
         shuffle=True,
     )
     valid_loader =DataLoader(
-        dataset=MnistDataset(valid_x, valid_y, flatten=True),
+        dataset=MnistDataset(valid_x, valid_y, flatten=flatten),
         batch_size=config.batch_size,
         shuffle=True,
     )
     
     test_x, test_y = load_mnist(is_train=False, flatten=False)
     test_loader = DataLoader(
-        dataset=MnistDataset(test_x, test_y, flatten=True),
+        dataset=MnistDataset(test_x, test_y, flatten=flatten),
         batch_size=config.batch_size,
         shuffle=False,
     )
