@@ -8,7 +8,10 @@ I developed this in a practical, deployable form, rather than simply in a Jupyte
 ### 0. Dependencies
 
 ```
-I plan to upload it later.
+pip install matplotlib
+pip install numpy
+pip install torch
+pip install pytorch-ignite
 ```
 
 ### 1. Directory
