@@ -48,6 +48,13 @@ class MyEngine(Engine):
             acc = (torch.argmax(y_hat,dim=-1) == y).sum() / float(y.size(0))
         else:
             acc = 0
+        # References: https://pytorch.org/docs/stable/generated/torch.nn.utils.clip_grad_norm_.html
+        if engine.config.max_grad > 0:
+            torch_utils.clip_grad_norm_(
+                engine.model.parameters(),
+                engine.config.max_grad,
+                norm_type=2
+            )
         
         engine.optimizer.step()
         
