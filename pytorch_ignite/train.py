@@ -7,6 +7,7 @@ from trainer import Trainer
 from data_loader import get_loaders
 from model.fc_model import FcClassifier
 from model.cnn_model import ConvolutionalClassifier
+from model.rnn_model import LSTMClassifier
 
 
 def define_argparser():
@@ -20,6 +21,11 @@ def define_argparser():
     p.add_argument('--n_epochs', type=int, default=30)
     p.add_argument('--verbose', type=int, default=2)
     
+    # It is for LSTM
+    p.add_argument('--hidden_size', type=int, default=64)
+    p.add_argument('--n_layers', type=int, default=4)
+    p.add_argument('--dropout_p', type=float, default=.2)
+    
     config = p.parse_args()
     
     return config
@@ -29,6 +35,14 @@ def model_choose(config):
         model = FcClassifier(28**2, 10)
     elif config.model == 'cnn':
         model = ConvolutionalClassifier(10)
+    elif config.model == 'rnn':
+        model = LSTMClassifier(
+            input_size = 28,
+            hidden_size = config.hidden_size,
+            output_size =10,
+            n_layers = config.n_layers,
+            dropout_p = config.dropout_p
+        )
     else:
         raise NotImplementedError('You need to tell me which model to use.')
     return model
