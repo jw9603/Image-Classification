@@ -45,6 +45,7 @@ pip install pytorch-ignite
     ├── model/
         ├── cnn_model.py/
         ├── fc_model.py/
+        ├── rnn_model.py/
     ├── run_train.sh/
     ├── test.py/
     ├── train.py/
